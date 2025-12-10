@@ -1,18 +1,16 @@
 package service.impl;
 
-import entity.impl.CustomArray;
+import entity.impl.CustomArrayImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.Sorting;
-
-import java.util.Arrays;
 
 public class SortingImpl implements Sorting {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public CustomArray bubbleSort(CustomArray customArray) {
+    public CustomArrayImpl bubbleSort(CustomArrayImpl customArray) {
         int arraySize = customArray.getSize();
         int[] numbers = customArray.getNumbers();
         for (int i = 0; i < arraySize - 1; i++) {
@@ -25,7 +23,7 @@ public class SortingImpl implements Sorting {
             }
         }
 
-        customArray = new CustomArray.Builder()
+        customArray = new CustomArrayImpl.Builder()
                 .setNumbers(numbers)
                 .build();
 
@@ -34,7 +32,7 @@ public class SortingImpl implements Sorting {
     }
 
     @Override
-    public CustomArray insertionSort(CustomArray customArray) {
+    public CustomArrayImpl insertionSort(CustomArrayImpl customArray) {
         int arraySize = customArray.getSize();
         int[] numbers = customArray.getNumbers();
 
@@ -50,7 +48,7 @@ public class SortingImpl implements Sorting {
             numbers[j + 1] = current;
         }
 
-        customArray = new CustomArray.Builder()
+        customArray = new CustomArrayImpl.Builder()
                 .setNumbers(numbers)
                 .build();
 

@@ -1,24 +1,22 @@
 package entity.impl;
 
-import entity.Entity;
-
 import java.util.Arrays;
 import java.util.UUID;
 
-public class CustomArray implements Entity {
+public class CustomArrayImpl implements entity.CustomArray {
 
     private final UUID id;
     private int currentSize;
     private int[] numbers;
 
-    private CustomArray(Builder builder){
+    private CustomArrayImpl(Builder builder){
         this.id = builder.id;
         this.numbers = builder.numbers;
         this.currentSize = builder.currentSize;
     }
 
     @Override
-    public CustomArray addNumber(int number) {
+    public CustomArrayImpl addNumber(int number) {
         int[] new_numbers = Arrays.copyOf(numbers, currentSize + 1);
         new_numbers[currentSize++] = number;
         numbers = new_numbers;
@@ -26,7 +24,7 @@ public class CustomArray implements Entity {
     }
 
     @Override
-    public CustomArray deleteNumber(int position) {
+    public CustomArrayImpl deleteNumber(int position) {
         if (position < currentSize) {
             for (int i = position; i < currentSize - 1; i++) {
                 numbers[i] = numbers[i + 1];
@@ -89,8 +87,8 @@ public class CustomArray implements Entity {
             return this;
         }
 
-        public CustomArray build(){
-            return new CustomArray(this);
+        public CustomArrayImpl build(){
+            return new CustomArrayImpl(this);
         }
 
     }

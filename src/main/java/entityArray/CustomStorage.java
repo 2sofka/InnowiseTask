@@ -1,21 +1,21 @@
 package entityArray;
 
-import entity.impl.CustomArray;
+import entity.impl.CustomArrayImpl;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface CustomStorage {
 
-    boolean add(CustomArray entity);
+    boolean add(CustomArrayImpl entity);
 
-    List<CustomArray> getAll();
+    List<CustomArrayImpl> getAll();
 
-    CustomArray get(UUID entityId);
+    CustomArrayImpl get(UUID entityId);
 
-    boolean update(CustomArray entity);
+    boolean update(CustomArrayImpl entity);
 
-    boolean delete(CustomArray entity);
+    boolean delete(CustomArrayImpl entity);
 
     boolean delete(UUID entityId);
 }

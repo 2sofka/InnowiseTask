@@ -1,10 +1,10 @@
 package factory;
 
-import entity.impl.CustomArray;
+import entity.impl.CustomArrayImpl;
 
 import java.util.UUID;
 
 public interface CustomFactory {
 
-    CustomArray create(int[] numbers, UUID uuid);
+    CustomArrayImpl create(int[] numbers, UUID uuid);
 }

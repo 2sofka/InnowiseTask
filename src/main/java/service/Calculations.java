@@ -1,11 +1,11 @@
 package service;
 
-import entity.impl.CustomArray;
+import entity.impl.CustomArrayImpl;
 
 public interface Calculations {
-    int findMin(CustomArray customArray);
+    int findMin(CustomArrayImpl customArray);
 
-    int findMax(CustomArray customArray);
+    int findMax(CustomArrayImpl customArray);
 
-    int findSumOfNumbers(CustomArray customArray);
+    int findSumOfNumbers(CustomArrayImpl customArray);
 }

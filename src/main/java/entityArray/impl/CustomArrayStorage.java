@@ -1,6 +1,6 @@
 package entityArray.impl;
 
-import entity.impl.CustomArray;
+import entity.impl.CustomArrayImpl;
 import entityArray.CustomStorage;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class CustomArrayStorage implements CustomStorage {
 
-    private List<CustomArray> customArrayList = new ArrayList<>();
+    private List<CustomArrayImpl> customArrayList = new ArrayList<>();
     private static CustomArrayStorage instance;
 
     public static CustomArrayStorage getInstance() {
@@ -24,26 +24,26 @@ public class CustomArrayStorage implements CustomStorage {
     }
 
     @Override
-    public boolean add(CustomArray entity) {
+    public boolean add(CustomArrayImpl entity) {
         return customArrayList.add(entity);
     }
 
 
     @Override
-    public List<CustomArray> getAll() {
+    public List<CustomArrayImpl> getAll() {
         return customArrayList;
     }
 
     @Override
-    public CustomArray get(UUID entityId) {
-        for (CustomArray entity : customArrayList) {
+    public CustomArrayImpl get(UUID entityId) {
+        for (CustomArrayImpl entity : customArrayList) {
             if (entity.getId() == entityId) return entity;
         }
         return null;
     }
 
     @Override
-    public boolean update(CustomArray entity) {
+    public boolean update(CustomArrayImpl entity) {
         if ((entity != null) && customArrayList.contains(get(entity.getId()))) {
             delete(entity.getId());
             customArrayList.add(entity);
@@ -54,7 +54,7 @@ public class CustomArrayStorage implements CustomStorage {
     }
 
     @Override
-    public boolean delete(CustomArray entity) {
+    public boolean delete(CustomArrayImpl entity) {
         return customArrayList.removeIf(x -> x.equals(entity));
     }
 
@@ -65,9 +65,9 @@ public class CustomArrayStorage implements CustomStorage {
 
     public static class Builder {
 
-        private List<CustomArray> customArrayList = new ArrayList<>();
+        private List<CustomArrayImpl> customArrayList = new ArrayList<>();
 
-        public CustomArrayStorage.Builder setCustomArrayList(List<CustomArray> customArrayList) {
+        public CustomArrayStorage.Builder setCustomArrayList(List<CustomArrayImpl> customArrayList) {
             this.customArrayList = customArrayList;
             return this;
         }

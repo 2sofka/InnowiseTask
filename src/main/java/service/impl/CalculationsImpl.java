@@ -1,6 +1,6 @@
 package service.impl;
 
-import entity.impl.CustomArray;
+import entity.impl.CustomArrayImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.Calculations;
@@ -10,7 +10,7 @@ public class CalculationsImpl implements Calculations {
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public int findMin(CustomArray customArray) {
+    public int findMin(CustomArrayImpl customArray) {
         int min = Integer.MAX_VALUE;
         int[] numbers = customArray.getNumbers();
         for (Integer number : numbers) {
@@ -23,7 +23,7 @@ public class CalculationsImpl implements Calculations {
     }
 
     @Override
-    public int findMax(CustomArray customArray) {
+    public int findMax(CustomArrayImpl customArray) {
         int max = Integer.MIN_VALUE;
         int[] numbers = customArray.getNumbers();
         for (Integer number : numbers) {
@@ -37,7 +37,7 @@ public class CalculationsImpl implements Calculations {
     }
 
     @Override
-    public int findSumOfNumbers(CustomArray customArray) {
+    public int findSumOfNumbers(CustomArrayImpl customArray) {
         int sum = 0;
         int[] numbers = customArray.getNumbers();
         for (Integer number : numbers) {
