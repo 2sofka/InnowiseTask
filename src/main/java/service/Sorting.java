@@ -1,9 +1,9 @@
 package service;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 
 public interface Sorting {
-    public CustomArrayImpl insertionSort(CustomArrayImpl customArray);
+    CustomArrayImpl insertionSort(CustomArrayImpl customArray);
 
-    public CustomArrayImpl bubbleSort(CustomArrayImpl customArray);
+    CustomArrayImpl bubbleSort(CustomArrayImpl customArray);
 }

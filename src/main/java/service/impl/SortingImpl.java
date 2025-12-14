@@ -1,6 +1,6 @@
 package service.impl;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.Sorting;

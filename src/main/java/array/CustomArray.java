@@ -1,6 +1,6 @@
-package entity;
+package array;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 
 import java.util.UUID;
 

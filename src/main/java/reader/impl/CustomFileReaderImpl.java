@@ -13,7 +13,7 @@ import java.util.*;
 public class CustomFileReaderImpl implements CustomFileReader {
 
     private static final Logger LOGGER = LogManager.getLogger();
-    private final String fileUrl = "data/output.txt";
+    private static final String fileUrl = "src/main/output.txt";
 
     @Override
     public List<String> parseRow() {

@@ -1,6 +1,6 @@
 package factory;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 
 import java.util.UUID;
 

@@ -1,9 +1,9 @@
 package parser;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 
 import java.util.List;
 
 public interface CustomParser {
-    List<CustomArrayImpl> parse(String[] rows);
+    List<CustomArrayImpl> parse(List<String> rows);
 }

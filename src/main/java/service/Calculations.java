@@ -1,6 +1,6 @@
 package service;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 
 public interface Calculations {
     int findMin(CustomArrayImpl customArray);

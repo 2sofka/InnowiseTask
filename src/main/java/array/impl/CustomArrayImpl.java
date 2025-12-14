@@ -1,9 +1,13 @@
-package entity.impl;
+package array.impl;
+
+import array.CustomArray;
+import observer.CustomObservable;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.UUID;
 
-public class CustomArrayImpl implements entity.CustomArray {
+public class CustomArrayImpl implements CustomArray, CustomObservable {
 
     private final UUID id;
     private int currentSize;
@@ -56,17 +60,37 @@ public class CustomArrayImpl implements entity.CustomArray {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        CustomArrayImpl that = (CustomArrayImpl) obj;
+
+        if (!id.equals(that.id)) return false;
+        if (currentSize != that.currentSize) return false;
+
+        return Arrays.equals(numbers, 0, currentSize,
+                that.numbers, 0, that.currentSize);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = Objects.hash(id, currentSize);
+
+        for (int i = 0; i < currentSize; i++) {
+            result = 31 * result + numbers[i];
+        }
+
+        return result;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        StringBuilder performance = new StringBuilder(id.toString()
+                + "\n");
+        for (int i = 0; i < currentSize; i++) {
+            performance.append(numbers[i]).append(" ");
+        }
+        return performance.toString();
     }
 
     public static class Builder {

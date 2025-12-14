@@ -1,7 +1,7 @@
-package entityArray.impl;
+package storage.impl;
 
-import entity.impl.CustomArrayImpl;
-import entityArray.CustomStorage;
+import array.impl.CustomArrayImpl;
+import storage.CustomStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class CustomArrayStorage implements CustomStorage {
 
-    private List<CustomArrayImpl> customArrayList = new ArrayList<>();
+    private List<CustomArrayImpl> customArrayList;
     private static CustomArrayStorage instance;
 
     public static CustomArrayStorage getInstance() {

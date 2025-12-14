@@ -1,6 +1,6 @@
 package com.example.entity;
 
-import entity.impl.CustomArrayImpl;
+import array.impl.CustomArrayImpl;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -8,7 +8,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class EntityTest {
+public class ArrayTest {
 
     @Test
     void getIdTest() {
